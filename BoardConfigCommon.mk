@@ -92,6 +92,7 @@ TARGET_USES_POST_PROCESSING := true
 TARGET_USES_C2D_COMPOSITION := true
 BOARD_EGL_CFG := device/htc/msm8660-common/configs/egl.cfg
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+BOARD_EGL_SYSTEMUI_PBSIZE_HACK := true
 
 # Qcom BSP (Board Support Package)
 TARGET_USES_QCOM_BSP := true
