@@ -211,13 +211,10 @@ static void set_speaker_light_locked_dual (struct light_device_t *dev, struct li
 
 
 static void handle_speaker_battery_locked (struct light_device_t *dev) {
-	if (is_lit (&g_battery) && is_lit (&g_notification)) {
-		set_speaker_light_locked_dual (dev, &g_battery, &g_notification);
-	} else if (is_lit (&g_battery)) {
+       if (is_lit (&g_notification))
+                set_speaker_light_locked (dev, &g_notification);
+       else
 		set_speaker_light_locked (dev, &g_battery);
-	} else {
-		set_speaker_light_locked (dev, &g_notification);
-	}
 }
 
 static int set_light_buttons (struct light_device_t* dev,
