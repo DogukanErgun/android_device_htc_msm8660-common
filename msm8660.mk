@@ -12,6 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
+LOCAL_KERNEL := device/htc/shooteru-kernel/kernel
+PRODUCT_COPY_FILES := \
+	$(LOCAL_KERNEL):kernel
+
 # Qualcomm scripts
 PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/prebuilt/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
@@ -36,7 +41,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
-    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
+    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
+    frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -134,7 +140,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     com.qc.hardware=true \
     ro.opengles.version=131072 \
     debug.mdpcomp.maxlayer=3 \
-    debug.egl.recordable.rgba8888=1 \
+    debug.egl.recordable.rgba8888=1 
     debug.sf.hw=1 \
     debug.egl.hw=1
 
