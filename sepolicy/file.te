@@ -4,4 +4,16 @@ type qmux_bluetooth_socket, file_type;
 type qmux_gps_socket, file_type;
 type qmux_radio_socket, file_type;
 type qmuxd_socket, file_type;
+type camera_socket, file_type;
+type sensors_socket, file_type;
+
+type sensors_data_file, file_type, data_file_type;
+
+
+# Persist firmware types
+type persist_file, file_type;
+type persist_bluetooth_file, file_type;
+type persist_drm_file, file_type;
+type persist_sensors_file, file_type;
+type persist_wifi_file, file_type;
 

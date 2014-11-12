@@ -1,0 +1,2 @@
+allow radio shell_data_file:dir search;
+

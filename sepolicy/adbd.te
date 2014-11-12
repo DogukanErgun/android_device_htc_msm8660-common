@@ -1,0 +1,4 @@
+allow adbd sdcard_type:dir { write search getattr add_name };
+allow adbd sdcard_type:file { write getattr setattr read create open }; 
+allow system_server security_file:file write;
+

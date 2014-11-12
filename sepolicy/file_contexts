@@ -8,18 +8,34 @@
 /dev/qseecom        u:object_r:qseecom_device:s0
 
 # Qualcomm MSM Interface (QMI) devices
-/dev/socket/qmux_audio(/.*)?           u:object_r:qmuxd_socket:s0
-/dev/socket/qmux_bluetooth(/.*)?       u:object_r:qmuxd_socket:s0
-/dev/socket/qmux_gps(/.*)?             u:object_r:qmuxd_socket:s0
-/dev/socket/qmux_radio(/.*)?           u:object_r:qmuxd_socket:s0
+/dev/socket/qmux_audio/*           u:object_r:qmux_audio_socket:s0
+/dev/socket/qmux_bluetooth/*       u:object_r:qmux_bluetooth_socket:s0
+/dev/socket/qmux_gps/*             u:object_r:qmux_gps_socket:s0
+/dev/socket/qmux_radio/*           u:object_r:qmux_radio_socket:s0
 
 /dev/diag                          u:object_r:diag_device:s0
 /dev/media([0-9])+                 u:object_r:camera_device:s0
 /dev/smd([0-9])+                   u:object_r:smd_device:s0
 /dev/mdm                           u:object_r:radio_device:s0
 
+/dev/lightsensor		   u:object_r:sensors_data_file:s0
+
 # Qualcomm MSM Audio ACDB device
-/dev/msm_acdb       u:object_r:msm_acdb_device:s0
+/dev/msm_acdb       		   u:object_r:msm_acdb_device:s0
+/dev/msm_mp3                       u:object_r:audio_device:s0
+/dev/msm_rtac                      u:object_r:audio_device:s0
+/dev/msm_vidc.*                    u:object_r:audio_device:s0
+/dev/msm_amrnb.*                   u:object_r:audio_device:s0
+/dev/msm_amrwb.*                   u:object_r:audio_device:s0
+/dev/msm_aac.*                     u:object_r:audio_device:s0
+/dev/msm_aac_in                    u:object_r:audio_device:s0
+/dev/msm_adc			   u:object_r:audio_device:s0
+/dev/msm_amrnb_in		   u:object_r:audio_device:s0
+/dev/msm_evrc_in		   u:object_r:audio_device:s0
+/dev/msm_qcelp_in		   u:object_r:audio_device:s0
+
+# Serial console
+/dev/ttyHS0                            u:object_r:hci_attach_dev:s0
 
 # Qualcomm audio firmware files
 /data/misc/audio/*                 u:object_r:audio_firmware_file:s0
@@ -35,3 +51,6 @@
 
 /system/bin/hci_qcomm_init         u:object_r:hci_exec:s0
 /system/bin/bdAddrLoader           u:object_r:hci_exec:s0
+/system/bin/qmuxd                  u:object_r:qmux_exec:s0
+/system/bin/netmgrd                u:object_r:netmgrd_exec:s0
+/system/bin/3d_camera		   u:object_r:camera_exec:s0	

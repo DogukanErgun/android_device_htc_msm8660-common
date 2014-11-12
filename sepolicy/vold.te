@@ -1,3 +1,4 @@
 # Allow vold to request the encryption kernel modules
 allow vold kernel:system module_request;
+allow vold proc:file write;
 
