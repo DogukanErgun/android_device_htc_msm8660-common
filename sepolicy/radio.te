@@ -1,2 +1,4 @@
 allow radio shell_data_file:dir search;
+allow radio unlabeled:dir search;
+allow radio unlabeled:file { getattr read open };
 

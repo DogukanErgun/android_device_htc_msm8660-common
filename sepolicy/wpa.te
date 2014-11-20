@@ -1,2 +1,4 @@
 allow wpa devpts:chr_file rw_file_perms;
 allow wpa wpa_socket:unix_dgram_socket { read write };
+allow wpa wpa_socket:chr_file rw_file_perms;
+

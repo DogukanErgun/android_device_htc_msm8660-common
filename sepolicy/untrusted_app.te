@@ -1,2 +1,8 @@
 #============= untrusted_app ==============
 allow untrusted_app apk_data_file:dir getattr;
+allow untrusted_app unlabeled:dir { read open search getattr };
+allow untrusted_app unlabeled:file { execute open getattr read };
+allow platform_app unlabeled:dir search;
+allow platform_app unlabeled:file { read getattr open };
+allow untrusted_app unlabeled:file execute_no_trans;
+

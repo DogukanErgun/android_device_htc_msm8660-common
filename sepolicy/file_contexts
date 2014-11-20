@@ -18,7 +18,10 @@
 /dev/smd([0-9])+                   u:object_r:smd_device:s0
 /dev/mdm                           u:object_r:radio_device:s0
 
+# Sensors
 /dev/lightsensor		   u:object_r:sensors_data_file:s0
+/dev/cm3602			   u:object_r:sensors_data_file:s0
+/dev/timerirq			   u:object_r:sensors_data_file:s0
 
 # Qualcomm MSM Audio ACDB device
 /dev/msm_acdb       		   u:object_r:msm_acdb_device:s0
@@ -33,6 +36,19 @@
 /dev/msm_amrnb_in		   u:object_r:audio_device:s0
 /dev/msm_evrc_in		   u:object_r:audio_device:s0
 /dev/msm_qcelp_in		   u:object_r:audio_device:s0
+/dev/msm_pcm_out                   u:object_r:audio_device:s0
+/dev/pmem_audio			   u:object_r:audio_device:s0
+/dev/htc-acoustic		   u:object_r:audio_device:s0
+/dev/tpa2051d3			   u:object_r:audio_device:s0
+/dev/codec_aic3254		   u:object_r:audio_device:s0
+/dev/msm_pcm_in			   u:object_r:audio_device:s0
+ 
+
+# Camera
+/dev/msm_camera(/.*)?                  u:object_r:camera_device:s0
+
+# Wifi
+/dev/rfkill 			   u:object_r:wpa_socket:s0
 
 # Serial console
 /dev/ttyHS0                            u:object_r:hci_attach_dev:s0
@@ -53,4 +69,4 @@
 /system/bin/bdAddrLoader           u:object_r:hci_exec:s0
 /system/bin/qmuxd                  u:object_r:qmux_exec:s0
 /system/bin/netmgrd                u:object_r:netmgrd_exec:s0
-/system/bin/3d_camera		   u:object_r:camera_exec:s0	
+/system/bin/3d_camera		   u:object_r:threedcamera_exec:s0	

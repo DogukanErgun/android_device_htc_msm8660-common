@@ -10,6 +10,9 @@ permissive netmgrd;
 # Starts as (root,radio) changes to (radio,radio)
 allow netmgrd self:capability { setuid setgid net_admin net_raw };
 
+allow netmgrd kernel:system module_request;
+allow netmgrd self:rawip_socket setopt;
+
 # Support modprobe??
 dontaudit netmgrd self:capability sys_module;
 
