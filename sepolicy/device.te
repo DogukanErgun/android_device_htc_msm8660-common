@@ -19,3 +19,6 @@ type kickstart_device, dev_type;
 type smd_device, dev_type;
 
 type power_control_device, dev_type;
+
+allow dhcp unlabeled:file { read getattr unlink open };
+

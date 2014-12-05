@@ -18,6 +18,17 @@
 /dev/smd([0-9])+                   u:object_r:smd_device:s0
 /dev/mdm                           u:object_r:radio_device:s0
 
+# qmuxd devices I'm not sure if they are really radio device
+/dev/smdcntl0			   u:object_r:radio_device:s0
+/dev/smdcntl1			   u:object_r:radio_device:s0
+/dev/smdcntl2			   u:object_r:radio_device:s0
+/dev/smdcntl3			   u:object_r:radio_device:s0
+/dev/smdcntl4			   u:object_r:radio_device:s0
+/dev/smdcntl5			   u:object_r:radio_device:s0
+/dev/smdcntl6			   u:object_r:radio_device:s0
+/dev/smdcntl7			   u:object_r:radio_device:s0
+
+
 # Sensors
 /dev/lightsensor		   u:object_r:sensors_data_file:s0
 /dev/cm3602			   u:object_r:sensors_data_file:s0
@@ -43,6 +54,8 @@
 /dev/codec_aic3254		   u:object_r:audio_device:s0
 /dev/msm_pcm_in			   u:object_r:audio_device:s0
  
+# gps
+/dev/oncrpc/*			   u:object_r:gps_device:s0
 
 # Camera
 /dev/msm_camera(/.*)?                  u:object_r:camera_device:s0

@@ -15,6 +15,7 @@ allow mediaserver diag_device:chr_file { open read ioctl write };
 allow mediaserver camera_device:chr_file { open read ioctl write };
 allow mediaserver camera_device:dir search;
 allow mediaserver shell_data_file:dir search;
+allow mediaserver gps_device:dir getattr;
 
 # Grant access to audio firmware files to mediaserver
 allow mediaserver audio_firmware_file:dir ra_dir_perms;

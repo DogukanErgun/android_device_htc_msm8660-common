@@ -7,6 +7,9 @@ allow rild system_data_file:file { write setattr };
 allow rild system_data_file:file create;
 allow rild system_data_file:sock_file { create unlink };
 allow rild sysfs:file write;
+allow rild unlabeled:file { read getattr open };
+allow rild system_data_file:sock_file write;
+allow rild qmux:unix_stream_socket connectto;
 
 
 # Grant access to Qualcomm MSM Interface (QMI) radio sockets to RILD

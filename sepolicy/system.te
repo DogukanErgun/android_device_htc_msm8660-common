@@ -9,6 +9,9 @@ allow system_server qmux_radio_socket:sock_file create_file_perms;
 allow system_server qmux_radio_socket:dir rw_dir_perms;
 allow system_server sensors_data_file:chr_file rw_file_perms;
 
+allow system_server gps_device:chr_file rw_file_perms;
+
+
 allow system_server wpa_socket:unix_dgram_socket sendto;
 #allow system_app sysfs:file write;
 allow system_app shell_data_file:dir search;
@@ -17,4 +20,11 @@ allow system_app unlabeled:file getattr;
 allow system_server sensors_data_file:chr_file { read write };
 #allow untrusted_app unlabeled:dir search;
 allow system_app unlabeled:dir search;
+allow system_app unlabeled:file { read open };
+allow system_app unlabeled:file { rename unlink };
+allow system_server unlabeled:file { rename setattr };
+allow system_server unlabeled:sock_file { getattr unlink };
+
+
+allow shared_relro unlabeled:file unlink;
 
